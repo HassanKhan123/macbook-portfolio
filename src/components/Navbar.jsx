@@ -1,0 +1,25 @@
+import { navLinks } from "#constants";
+import dayjs from "dayjs";
+import React from "react";
+
+const Navbar = () => {
+  return (
+    <nav>
+      <div>
+        <img src="/images/logo.svg" alt="logo" />
+        <p className="font-bold">Hassan's Portfolio</p>
+        <ul>
+          {navLinks.map(({ id, name }) => (
+            <li key={id}>{name}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <time>{dayjs().format("ddd MMM D h:mm A")}</time>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
